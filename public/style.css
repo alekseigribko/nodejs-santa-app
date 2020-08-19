@@ -8,11 +8,16 @@
 body {
   font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
   margin: 2em;
+  background-color: mintcream;
 }
 
 h1 {
   font-style: italic;
-  color: #373fff;
+  color: teal;
+  border-bottom: 1px solid lightgrey;
+  padding: 10px 20px;
+  font-size: 38px;
+
 }
 
 .bold {
@@ -20,26 +25,98 @@ h1 {
 }
 
 p {
-  max-width: 600px;
+  max-width: 500px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  font-family: inherit;
 }
+
+.container{
+  padding: 5px 10px;
+  overflow: hidden;
+}
+
+.container small{
+
+  position: relative;
+  margin-left: 5px;
+  visibility: hidden;
+}
+
+.form{
+  padding:50px 60px;
+}
+
+.form-control{
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+  position: relative;
+  
+}
+
+.form-control label{
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.form-control small{
+
+  position: relative;
+  margin-left: 5px;
+  visibility: hidden;
+}
+
+.form-control span{
+
+  position: relative;
+  margin-left: 5px;
+  font-family: inherit;
+  
+}
+
+.form-control.success textarea {
+
+  border-color: #2ecc71;
+}
+
+
+.form-control.error textarea {
+
+  border-color: #e74c3c;
+}
+
+.form-control.error small {
+  
+  visibility: visible;
+  color: #e74c3c;
+}
+
+
 
 input, textarea {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   padding: 5px;
   width: 300px;
-  border: 1px solid lightgrey;
+  border: 1px solid grey;
+  background-color:lightgrey;
   border-radius: 3px;
+  box-shadow: 2px 2px  teal; 
   font-size: 16px;
+  font-family: inherit;
 }
 
 button {
   font-size: 16px;
+  font-family: inherit;
   border-radius: 3px;
   background-color: lightgrey;
   border: 1px solid grey;
   box-shadow: 2px 2px teal;
   cursor: pointer;
+  margin-top: 30px;
+  
 }
 
 button:hover {
@@ -55,7 +132,7 @@ li {
 }
 
 footer {
-  margin-top: 50px;
+  margin-top: 25px;
   padding-top: 25px;
   border-top: 1px solid lightgrey;
 }

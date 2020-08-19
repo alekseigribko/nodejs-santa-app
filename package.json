@@ -10,10 +10,14 @@
     "start": "node -r dotenv/config server.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
+    "moment": "^2.27.0",
     "morgan": "^1.9.1",
+    "nodemailer": "^6.4.11",
+    "nodemon": "^2.0.4",
     "request": "^2.88.0"
   },
   "engines": {

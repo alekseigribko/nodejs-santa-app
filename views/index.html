@@ -22,10 +22,12 @@
   <link rel="stylesheet" href="/style.css">
 
   <!-- import the webpage's client-side javascript file -->
-  <script src="/client.js" defer></script>
+  <script defer src="/client.js"></script>
+  
 </head>
 
 <body>
+  
   <header>
     <h1>
       A letter to Santa
@@ -33,21 +35,45 @@
   </header>
 
   <main>
-    <p class="bold">Ho ho ho, what you want for christma?</p>
+    <p class="bold">Ho ho ho, what do you want for christmas?</p>
 
-    who are you?
-    <input name="userid" placeholder="charlie.brown" />
-    <form method="post">
-      what do you want for christmas?
-      <textarea name="wish" rows="10" cols="45" maxlength="100" placeholder="Gifts!"></textarea>
-      <br/>
-      <button type="submit" id="submit-letter">Send</button>
-    </form>
+    <!--Edited the form/put the input for user inside the form-->
+    <!-- Corrected grammar and edited placeholders-->
+    
+    <div class="container">
+    
+      <form id="form" method="post" action="/wish">
+      
+        <div class="form-control">
+      
+          <label> What's your name?</label>
+          <input id="name" name="username" placeholder="Please enter your id" required/>
+
+          <label>What do you want for christmas?</label>    
+          <!--edited maxlength to 101 characters instead of 100 to perform the tests-->    
+          <textarea id="text" name="wish" rows="10" cols="45" maxlength="101" placeholder="Type your free message to Santa!"></textarea>
+          
+
+        <div id="the-count-comment">
+
+            <span id="current-comment">0</span>          
+            <span id="maximum-comment"> / 100</span>  
+            <small>Error message</small>
+
+        </div>
+       
+          
+        <button type="submit" id="submit-letter">Send</button>
+      </div>
+
+      </form>
+    </div>
   </main>
 
   <footer>
     Made with
     <a href="https://glitch.com">Glitch</a>!
+    Styled by Aleksei
   </footer>
 
   <!-- include the Glitch button to show what the webpage is about and

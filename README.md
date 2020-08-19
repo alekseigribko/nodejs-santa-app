@@ -67,5 +67,6 @@ On the front-end,
 On the back-end,
 - your app starts at `server.js`
 - add frameworks and packages in `package.json`
+- rename `.example.env` to `.env`
 - safely store app secrets in `.env` (nobody can see this but you and people you invite)
 - app uses node8 by default, it is possible to update the version of nodejs used: https://glitch.com/help/node/
