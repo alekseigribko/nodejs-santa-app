@@ -11,6 +11,7 @@
 <html lang="en">
 
 <head>
+
   <title>Welcome to Glitch!</title>
   <meta name="description" content="A cool thing made with Glitch">
   <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
@@ -29,12 +30,15 @@
 <body>
   
   <header>
+
     <h1>
       A letter to Santa
     </h1>
+
   </header>
 
   <main>
+
     <p class="bold">Ho ho ho, what do you want for christmas?</p>
 
     <!--Edited the form/put the input for user inside the form-->
@@ -47,11 +51,12 @@
         <div class="form-control">
       
           <label> What's your name?</label>
+          <!--Enabled HTML native validation for input-->    
           <input id="name" name="username" placeholder="Please enter your id" required/>
 
           <label>What do you want for christmas?</label>    
-          <!--edited maxlength to 101 characters instead of 100 to perform the tests-->    
-          <textarea id="text" name="wish" rows="10" cols="45" maxlength="101" placeholder="Type your free message to Santa!"></textarea>
+          <!--Enabled HTML native validation for textarea-->    
+          <textarea id="text" name="wish" rows="10" cols="45" maxlength="100" placeholder="Type your free message to Santa!" required></textarea>
           
 
         <div id="the-count-comment">
@@ -62,18 +67,22 @@
 
         </div>
        
-          
         <button type="submit" id="submit-letter">Send</button>
+
       </div>
 
       </form>
+
     </div>
+
   </main>
 
   <footer>
+
     Made with
     <a href="https://glitch.com">Glitch</a>!
     Styled by Aleksei
+
   </footer>
 
   <!-- include the Glitch button to show what the webpage is about and

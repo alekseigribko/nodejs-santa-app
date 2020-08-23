@@ -1,72 +1,38 @@
-# nodejs coding challenge:
+# nodejs coding challenge
 
-## How to create and submit your app using glitch
+The project was completed according to the guide-lines given in this readme file.
+This web-app sends emails from children to Santa. Sent emails are viewable in the inbox on ethernal.mail.
 
-1. **Clone**: Go to this URL: https://glitch.com/~nodejs-santa-app and click the `Remix your own` button to clone the code. This will copy all the code to a new, randomly generated URL (e.g. https://glitch.com/edit/#!/capable-toothpaste). This is your URL to code on, no other candidates will have this URL.
+Before sending the actial email user-data and user-profile information is retrieved from the JSON objects 
+and validated.
 
-2. **Code**: You can edit the code directly in the Glitch editor or use your editor of choice (VSCode, Sublime, etc) and copy paste the files into Glitch. Git import and export is also available in the Tools menu on the bottom left. How you edit the code is entirely up to you, so long as your finished work is viewable at the URL created in the previous step.
+The validation is done on three levels:
+- username and the text of user's wish are validated in HTML files using native HTML validation;
+- username and the text of user's wish are validated on the client's side in the `public/client.js` file;
+- username and the text of user's wish are validated on the server-side (username is in `user.js`, wish in `server.js`).
 
-> **NOTE**: Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
+User's age is validated using Momentjs. The d.o.b. is parsed in YYYY/DD/MM format and substracted using .diff function.
 
-4. **Turn in**: When you finish coding, send your URL to us so we can review your code.
+Basic error messages are given for the cases:
+- if the user is not registered (the name is not is the provided JSON files/null);
+- a registered user is older than 10 y.o. ( 10 y.o. users are allowed to send emails to Santa);
+- a registred user hasn't typed their wish in the corresponding field in the form.
 
-
-## Objectives overview:
-
-The webapp should display a form for children to enter their id and a free text message to santa.
-
-When submitting the form, the server should check:
- 1. that the child is registered
- 2. that the child is less than 10 years old.
-To this purpose, the server can fetch user and profiles data in JSON format from:
-- https://raw.githubusercontent.com/alj-devops/santa-data/master/userProfiles.json
-- https://raw.githubusercontent.com/alj-devops/santa-data/master/users.json
-
-If the child is not registered (no match for the user id) or more than 10years old, the webapp should display a basic error page with an error message explaining the problem.\
-If the child is registered and less than 10 years old, the server should show a page indicating that the request has been received.
-
-Every 15seconds, the server should send an email with information on all pending (not yet sent) requests including:
-- child username (eg. charlie.brown)
-- child's address (eg. 219-1130, Ikanikeisaiganaibaai, Musashino-shi, Tokyo)
-- request free text as was input in the form
-
-Email sender should be set as do_not_reply@northpole.com, and sent to santa@northpole.com
-
-## tips and detailed instructions:
-
-- somebody started to work on the app, but left it unfinished. It is up to you to complete it. You are allowed to restart from scratch if you prefer.
-- the look and feel of the application for this challenge is not the priority. The pages/email do not need to look good, as long as they convey the information effectively.
-- you should fetch the JSON data at every form submission (consider it as an API)
-- for the sake of the challenge, you can keep the requests in-memory only
-- you are encouraged to select and use npm packages as needed (you can add packages by editing package.json, or using `npm install` from the glitch console)
-- to get an smtp server for emails, go to https://ethereal.email/ and click "Create Ethereal Account".\
-This will give you an account (take note of your username and pwd if you need to re-logon later) and smtp server (actual emails do not get delivered).\
-Go to https://ethereal.email/messages to see the emails that have been received by the smtp server.
-
-
-
-## Some things we will look for in your submission
-- Code quality (readability, use of modern syntax...)
-- Does the app work as designed (cf. objectives overview)
-- App architecture (folder structure, configuration management...)
-
-
-
-## tips on usage of glitch
-
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
-When your app is running, you can access logs and console using the "Tools" button at the bottom left.
-
-Your Project
-------------
+## Some work done:
 
 On the front-end,
-- edit `public/client.js`, `public/style.css` and `views/index.html`
-- drag in `assets`, like images or music, to add them to your project
+-  `public/client.js` added form validation and counter for the characters in the textarea(wish);
+-  `public/style.css`  edited the style sheet to more universal(in terms of this app) style, changed the color scheme ;
+-  added extra files into `./views/`. Now there are available views for basic errors and successfully sent emails.
 
-On the back-end,
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- rename `.example.env` to `.env`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
-- app uses node8 by default, it is possible to update the version of nodejs used: https://glitch.com/help/node/
+On the back-end:
+- the app is in `server.js`
+- needed packages were installed into `package.json` (nodemailer, moment, axios);
+- updating and getting user infromation is done in `user.js` module;
+- functions for sending emails are in `mailer.js` module;
+- access the `.env` data through `example.env`.
+
+## What could be done(extra):
+
+- for editing and presenting the text of a user's wish a templating engine could be used (i.e. Mustache.js);
+
